@@ -46,7 +46,6 @@ def wd2(x, y):
     re = atan2(x, y) * 180
     while re - 360 > 0:
         re = re - 360
-    re = int(re)
     return re
 
 
@@ -54,7 +53,6 @@ def wdw(z, r):
     re = math.acos((z / r)) * 180
     while re - 90 > 0:
         re = re - 90
-    re = int(re)
     return re
 
 
