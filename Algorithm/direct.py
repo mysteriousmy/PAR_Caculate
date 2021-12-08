@@ -23,8 +23,8 @@ class LoadData(object):
         return params_init
 
     def setZero(self):
-        newdata_x = self.lasfile.x - min(self.lasfile.x)
-        newdata_y = self.lasfile.y - min(self.lasfile.y)
+        newdata_x = self.lasfile.x - np.asarray(self.lasfile.x).mean()
+        newdata_y = self.lasfile.y - np.asarray(self.lasfile.y).mean()
         newdata_z = self.lasfile.z - min(self.lasfile.z)
         real_data = np.c_[newdata_x, newdata_y, newdata_z]
         self.lasfile_t = real_data

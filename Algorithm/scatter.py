@@ -43,7 +43,7 @@ class LodaData_Ball(object):
 
 
 def wd2(x, y):
-    re = atan2(y, x) * 180
+    re = atan2(x, y) * 180
     while re - 360 > 0:
         re = re - 360
     re = int(re)
@@ -108,6 +108,6 @@ def doball(zhigh_percent, r_percent, r_grid, theta_grid, phi_grid, newload, pool
         Ngap_num = Ngap_num + datas.count([])
     Ngap_num = Ngap_num / \
         ((params_init.theta_grid * params_init.phi_grid *
-          (params_init.r_grid+1)))
+          params_init.r_grid))
     print("{}%层 v2:{} r_grid:{} 角度孔隙率：{} %".format(
         zhigh_percent, 90 / theta_grid, r_grid, round(Ngap_num * 100, 2)))

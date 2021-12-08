@@ -65,7 +65,7 @@ class lasfileAction(object):
         return self.lasfile
 
 
-def atan2(y, x):
+def atan2(x, y):
     # radiant
     if x > 0 and y > 0:  # 1
         return math.pi/2 - math.atan(y/x)
