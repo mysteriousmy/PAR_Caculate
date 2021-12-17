@@ -26,7 +26,8 @@ class LoadData(object):
         newdata_x = self.lasfile.x - np.asarray(self.lasfile.x).mean()
         newdata_y = self.lasfile.y - np.asarray(self.lasfile.y).mean()
         newdata_z = self.lasfile.z - np.asarray(self.lasfile.z).min()
-        real_data = np.c_[newdata_x, newdata_y, newdata_z]
+        real_data = np.column_stack(
+            [newdata_x, newdata_y, newdata_z]).astype(np.float32)
         self.lasfile_t = real_data
         print("加载完毕，开始计算")
         return real_data
